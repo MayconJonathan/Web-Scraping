@@ -28,7 +28,6 @@ soup = BeautifulSoup(response.text, 'html.parser')
 # Usando expressão regular para encontrar links com 'anexo' no nome e terminando com .pdf
 download_links = [link['href'] for link in soup.find_all('a', href=True) if re.search(r'Anexo.*\.pdf$', link['href'])]
 
-# Criar uma pasta para armazenar os arquivos baixados:
 os.makedirs('downloads', exist_ok=True)
 
 
